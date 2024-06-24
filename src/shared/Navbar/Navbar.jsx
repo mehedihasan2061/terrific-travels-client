@@ -63,24 +63,57 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl md:text-3xl">Terrific Travels</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <p>
-          {user && (
-            <span className="text-green-600 text-bold">{user.email}</span>
-          )}
-        </p>
+      
         <div className="navbar-end">
-          {user ? (
-            <button onClick={handleLogOut} className="btn btn-outline btn-primary">Log out</button>
-          ) : (
-            <Link to="/login">
-              <button className="btn btn-outline btn-primary">Login</button>
-            </Link>
-          )}
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src={
+                    user
+                      ? user?.photoURL
+                      : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  }
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <a className="justify-between font-bold">
+                  {user && user?.displayName}
+                </a>
+              </li>
+              <li>
+                <a className="justify-between font-bold">
+                  {user && user?.email}
+                </a>
+              </li>
+              {user ? (
+                <li>
+                  <button className="btn" onClick={handleLogOut}>
+                    Log Out
+                  </button>
+                </li>
+              ) : (
+                <Link to="/login">
+                  <button className="btn">Log In</button>
+                </Link>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
     );

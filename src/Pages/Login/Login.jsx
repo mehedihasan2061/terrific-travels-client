@@ -28,7 +28,7 @@ const Login = () => {
                   title: "success",
                   text: "User Login Successfully",
                   icon: "success",
-                  confirmButtonText: "Cool",
+                  confirmButtonText: "Ok",
                 });
                 form.reset('')
             })

@@ -1,63 +1,101 @@
-import { NavLink } from "react-router-dom";
+import { FaLocationDot } from "react-icons/fa6";
+import photo1 from "../../assets/photo-1567883251222-651d554b880c.avif"
+import photo2 from "../../assets/photo-1590716209211-ea74d5f63573.avif"
+import photo3 from "../../assets/photo-1617409123168-8fb039dd3b39.avif"
+import photo4 from "../../assets/photo-1674979725177-864aebe7e3d6.avif"
 
 
 const Banner = () => {
-     const links = (
-       <>
-         <li>
-           <NavLink to="/">Home</NavLink>
-         </li>
+     
 
-         <li>
-           <NavLink to="/achieve"> All Tourists Spot</NavLink>
-         </li>
-         {/* <li><NavLink to="/about">About</NavLink></li> */}
-         <li>
-           <NavLink to="/faq">Add Tourists Spot</NavLink>
-         </li>
-         <li>
-           <NavLink to="/contact">My List</NavLink>
-         </li>
-       </>
-     );
     return (
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-             {links}
-             
-             
-            </ul>
+      <div className="carousel w-full">
+        <div id="slide1" className="carousel-item relative w-full">
+          <img src={photo2} className=" md:w-full md:max-h-screen" />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide4" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide2" className="btn btn-circle">
+              ❯
+            </a>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <div className="absolute bottom-16 p-2 md:bottom-28 md:left-20">
+            <p className="md:text-3xl font-semibold my-4 text-blue-900 bg-gray-300 opacity-65 p-2 rounded-xl">
+              A magnificent architectural structure in Riyadh, Saudi Arabia
+            </p>
+            <p className="flex items-center space-x-2 text-2xl font-bold">
+              <FaLocationDot className="text-2xl "></FaLocationDot>
+              <span className="text-green-600">
+                Sydney Opera House, Sydney NSW, Australia
+              </span>
+            </p>
+          </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {links}
-          </ul>
+        <div id="slide2" className="carousel-item relative w-full">
+          <img src={photo4} className="md:w-full md:max-h-screen" />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide1" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide3" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+          <div className="absolute bottom-16 p-2 md:bottom-28 md:left-20">
+            <p className="md:text-3xl font-semibold my-4 text-blue-900 bg-gray-300 opacity-65 p-2 rounded-xl">
+              A magnificent architectural structure in Riyadh, Saudi Arabia
+            </p>
+            <p className="flex items-center space-x-2 text-2xl font-bold">
+              <FaLocationDot className="text-2xl "></FaLocationDot>
+              <span className="text-green-600">Riyadh Saudi Arabia</span>
+            </p>
+          </div>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div id="slide3" className="carousel-item relative w-full">
+          <img src={photo3} className="md:w-full md:max-h-screen  " />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide2" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide4" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+
+          <div className="absolute bottom-16 p-2 md:bottom-28 md:left-20">
+            <p className="md:text-3xl font-semibold my-4 text-blue-900 bg-gray-300 opacity-65 p-2 rounded-xl">
+              A magnificent architectural structure in Riyadh, Saudi Arabia
+            </p>
+            <p className="flex items-center space-x-2 text-2xl font-bold">
+              <FaLocationDot className="text-2xl "></FaLocationDot>
+              <span className="text-green-600">
+                Orlando Eye, International Drive, Orlando, FL, USA
+              </span>
+            </p>
+          </div>
+        </div>
+        <div id="slide4" className="carousel-item relative w-full">
+          <img src={photo1} className=" md:w-full md:max-h-screen" />
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide3" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide1" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+          <div className="absolute bottom-16 p-2 md:bottom-28 md:left-20">
+            <p className="md:text-3xl font-semibold my-4 text-blue-900 bg-gray-300  p-2 rounded-xl">
+              A magnificent architectural structure in Riyadh, Saudi Arabia
+            </p>
+            <p className="flex items-center space-x-2 text-2xl font-bold">
+              <FaLocationDot className="text-2xl "></FaLocationDot>
+              <span className="text-green-600">
+                Temple of Heaven South Gate, Dongcheng, China
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     );

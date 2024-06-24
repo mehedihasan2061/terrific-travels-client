@@ -47,7 +47,7 @@ const Register = () => {
                   title: "success",
                   text: "User Register Successfully",
                   icon: "success",
-                  confirmButtonText: "Cool",
+                  confirmButtonText: "Ok",
                 });
 
                 updateUserProfile(name, photo)
