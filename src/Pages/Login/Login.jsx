@@ -2,12 +2,12 @@ import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa6";
 
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext)
+    const { signIn, googleLogin, gitHubLogin } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('')
     const [showPassword,setShowPassword]=useState(false)
     const handleLogin = (e) => {
@@ -36,7 +36,29 @@ const Login = () => {
                 console.log(error);
                 setLoginError(error.message)
         })
-    };
+  };
+  
+  const handleGoogle = () => {
+    googleLogin()
+    .then(result => {
+      const user = result.user;
+      console.log(user)
+
+    })
+      .catch(error => {
+      console.log(error);
+    })
+  }
+  const handleGithub = () => {
+    gitHubLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
     return (
       <div className="hero bg-base-200 min-h-screen">
@@ -99,8 +121,25 @@ const Login = () => {
                   </Link>
                 </p>
               </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+              <div className="form-control mt-6  ">
+                <button className="btn btn-primary ">Login</button>
+              </div>
+              <div className="">
+                <button
+                  onClick={handleGoogle}
+                  className="btn w-full  font-bold"
+                >
+                  <FaGoogle></FaGoogle> Google
+                </button>
+              </div>
+              <p className=" font-semibold text-center">Or</p>
+              <div className="">
+                <button
+                  onClick={handleGithub}
+                  className="btn w-full  font-bold"
+                >
+                  <FaGithub></FaGithub> GitHub
+                </button>
               </div>
             </form>
           </div>

@@ -68,7 +68,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-      
+
         <div className="navbar-end">
           <div className="dropdown dropdown-end">
             <div
@@ -97,7 +97,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a className="justify-between font-bold">
+                <a className="justify-between text-[14px] font-bold">
                   {user && user?.email}
                 </a>
               </li>
@@ -108,7 +108,7 @@ const Navbar = () => {
                   </button>
                 </li>
               ) : (
-                <Link to="/login">
+                <Link to="/login " className="flex justify-center ">
                   <button className="btn">Log In</button>
                 </Link>
               )}
