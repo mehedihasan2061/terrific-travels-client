@@ -61,7 +61,7 @@ const ListItem = ({ item,control,setControl }) => {
         </div>
         <div
           onClick={() => handleDelete(_id)}
-          className="absolute top-0 right-0"
+          className="absolute top-0 right-0 cursor-pointer"
         >
           <MdDelete className="text-5xl bg-red-600   p-2 rounded-full"></MdDelete>
         </div>

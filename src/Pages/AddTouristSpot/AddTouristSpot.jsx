@@ -245,7 +245,7 @@ const AddTouristSpot = () => {
               </div>
             </fieldset> */}
             <button className="btn bg-blue-800 text-white hover:bg-blue-500 ">
-              Add
+              Added Tourist Spot
             </button>
           </form>
         </section>

@@ -17,8 +17,7 @@ const UpdateItem = () => {
            seasonality,
            travel_time,
            totalVisitorsPerYear,
-           email,
-           name,}=updateItem
+           }=updateItem
     const handleUpdate = (e) => {
         e.preventDefault()
          const form = e.target;
@@ -31,8 +30,7 @@ const UpdateItem = () => {
          const seasonality = form.seasonality.value;
          const travel_time = form.travel_time.value;
          const totalVisitorsPerYear = form.totalVisitorsPerYear.value;
-         const email = form.email.value;
-         const name = form.name.value;
+         
          const updateUser = {
            photo,
            touristsSpotName,
@@ -43,8 +41,7 @@ const UpdateItem = () => {
            seasonality,
            travel_time,
            totalVisitorsPerYear,
-           email,
-           name,
+           
          };
         console.log(updateUser);
         fetch(`http://localhost:5000/spot/${_id}`, {
@@ -74,39 +71,38 @@ const UpdateItem = () => {
             onSubmit={handleUpdate}
             noValidate=""
             action=""
-            className="container flex  flex-col mx-auto space-y-12"
+            className="container flex p-2  flex-col mx-auto space-y-12"
           >
             <fieldset className="grid grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
               <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="photo" className="text-sm">
+                  <label htmlFor="photo" className="font-bold">
                     image
                   </label>
                   <input
                     id="photo"
                     type="text"
-                   defaultValue={photo}
+                    defaultValue={photo}
                     placeholder="image URL"
                     name="photo"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="touristSpot" className="text-sm">
+                  <label htmlFor="touristSpot" className="font-bold">
                     touristsSpotName
                   </label>
                   <input
                     id="touristSpot"
                     type="text"
-                   defaultValue={touristsSpotName}
+                    defaultValue={touristsSpotName}
                     placeholder="tourists_spot_name"
-                    
                     name="touristsSpotName"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="country_name" className="text-sm">
+                  <label htmlFor="country_name" className="font-bold">
                     country_Name
                   </label>
                   <input
@@ -115,11 +111,11 @@ const UpdateItem = () => {
                     defaultValue={country_name}
                     placeholder="country_name"
                     name="country_name"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="location" className="text-sm">
+                  <label htmlFor="location" className="font-bold">
                     location
                   </label>
                   <input
@@ -128,11 +124,11 @@ const UpdateItem = () => {
                     defaultValue={location}
                     placeholder="location"
                     name="location"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2  rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="short_description" className="text-sm">
+                  <label htmlFor="short_description" className="font-bold">
                     short_description
                   </label>
                   <input
@@ -141,11 +137,11 @@ const UpdateItem = () => {
                     defaultValue={short_description}
                     placeholder="short_description"
                     name="short_description"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="average_cost" className="text-sm">
+                  <label htmlFor="average_cost" className="font-bold">
                     average_cost
                   </label>
                   <input
@@ -154,11 +150,11 @@ const UpdateItem = () => {
                     defaultValue={average_cost}
                     placeholder="average_cost"
                     name="average_cost"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="seasonality " className="text-sm">
+                  <label htmlFor="seasonality " className="font-bold">
                     seasonality
                   </label>
                   <input
@@ -167,11 +163,11 @@ const UpdateItem = () => {
                     defaultValue={seasonality}
                     placeholder="seasonality"
                     name="seasonality"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="travel_time" className="text-sm">
+                  <label htmlFor="travel_time" className="font-bold">
                     travel_time
                   </label>
                   <input
@@ -180,11 +176,11 @@ const UpdateItem = () => {
                     defaultValue={travel_time}
                     placeholder="travel_time"
                     name="travel_time"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="totalVisitorsPerYear" className="text-sm">
+                  <label htmlFor="totalVisitorsPerYear" className="font-bold">
                     totalVisitorsPerYear
                   </label>
                   <input
@@ -193,33 +189,7 @@ const UpdateItem = () => {
                     defaultValue={totalVisitorsPerYear}
                     placeholder="totalVisitorsPerYear"
                     name="totalVisitorsPerYear"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
-                  />
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="email" className="text-sm">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    defaultValue={email}
-                    placeholder="Email"
-                    name="email"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
-                  />
-                </div>
-                <div className="col-span-full">
-                  <label htmlFor="name" className="text-sm">
-                    Name
-                  </label>
-                  <input
-                    id="text"
-                    type="text"
-                    defaultValue={name}
-                    placeholder="name"
-                    name="name"
-                    className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
               </div>
