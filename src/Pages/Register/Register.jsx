@@ -14,15 +14,15 @@ const Register = () => {
     const [registerError, setRegisterError] = useState("");
     const [showPassword, setShowPassword] = useState(false)
     
-    const handleRegister = e => {
-        e.preventDefault()
-        const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const photo = form.photoURL.value;
-        const password = form.password.value;
-        console.log(name, email, photo, password);
-        setRegisterError("")
+  const handleRegister = e => {
+    e.preventDefault()
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photoURL.value;
+    const password = form.password.value;
+    const userDetails = { name, email, photo, password }
+    console.log(userDetails);
          if (password.length < 6) {
            setRegisterError("Please Provide Must Be 6 Character");
            return;
@@ -49,14 +49,28 @@ const Register = () => {
                   icon: "success",
                   confirmButtonText: "Ok",
                 });
-
+               
                 updateUserProfile(name, photo)
                     .then(result => {
                         const user = result.user
-                        console.log(user);
+                      console.log(user);
+                      
+                      // fetch("http://localhost:5000/user", {
+                      //   method: "POST",
+                      //   headers: {
+                      //     "content-type": "application/json",
+                      //   },
+                      //   body: JSON.stringify(userDetails),
+                      // })
+                      //   .then((res) => res.json())
+                      //   .then((data) => {
+                      //     console.log(data);
+                      //   });
+
+                     
                     })
                     .catch(error => {
-                    console.log(error.message);
+                    console.log(error);
                 })
 
                 form.reset('')

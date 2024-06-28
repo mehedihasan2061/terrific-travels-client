@@ -17,10 +17,10 @@ const Navbar = () => {
         </li>
         {/* <li><NavLink to="/about">About</NavLink></li> */}
         <li>
-          <NavLink to="/faq">Add Tourists Spot</NavLink>
+          <NavLink to="/addTouristSpot">Add Tourists Spot</NavLink>
         </li>
         <li>
-          <NavLink to="/contact">My List</NavLink>
+          <NavLink to="/myList">My List</NavLink>
         </li>
         </>
         
@@ -108,7 +108,7 @@ const Navbar = () => {
                   </button>
                 </li>
               ) : (
-                <Link to="/login " className="flex justify-center ">
+                <Link to="/login" className="flex justify-center ">
                   <button className="btn">Log In</button>
                 </Link>
               )}

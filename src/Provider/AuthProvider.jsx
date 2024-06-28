@@ -7,33 +7,43 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
+  const [loading,setLoading]=useState(true)
+
+
+
   const googleProvider = new GoogleAuthProvider()
   const githubProvider=new GithubAuthProvider()
     
-    const createUser = (email,password) => {
+  const createUser = (email, password) => {
+      setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
-    const updateUserProfile = (name, photo) => {
+  const updateUserProfile = (name, photo) => {
+      setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName:name,photoURL:photo
         })
         
     }
 
-    const signIn = (email, password) => {
+  const signIn = (email, password) => {
+      setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
 
-    const logOut = () => {
+  const logOut = () => {
+      setLoading(true)
         return signOut(auth)
   }
   
   const googleLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth,googleProvider)
   }
 
   const gitHubLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth,githubProvider)
   }
 
@@ -41,7 +51,7 @@ const AuthProvider = ({ children }) => {
        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
          console.log("on Auth state change", currentUser);
          setUser(currentUser);
-        //  setLoading(false);
+         setLoading(false);
        });
        return () => {
          unSubscribe();
@@ -56,6 +66,7 @@ const AuthProvider = ({ children }) => {
       logOut,
       googleLogin,
       gitHubLogin,
+      loading
     };
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };

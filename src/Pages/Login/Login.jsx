@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa6";
 
@@ -9,7 +9,11 @@ const Login = () => {
 
     const { signIn, googleLogin, gitHubLogin } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('')
-    const [showPassword,setShowPassword]=useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  
+  const location = useLocation()
+  console.log(location.pathname);
+  const navigate=useNavigate()
     const handleLogin = (e) => {
       e.preventDefault();
       const form = e.target;
@@ -18,7 +22,7 @@ const Login = () => {
      
       const password = form.password.value;
         console.log(email, password);
-        setLoginError('')
+        setLoginError(' ')
 
         signIn(email, password)
             .then(result => {
@@ -30,7 +34,8 @@ const Login = () => {
                   icon: "success",
                   confirmButtonText: "Ok",
                 });
-                form.reset('')
+              form.reset('')
+               navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
                 console.log(error);
@@ -43,6 +48,7 @@ const Login = () => {
     .then(result => {
       const user = result.user;
       console.log(user)
+       navigate(location?.state ? location.state : "/");
 
     })
       .catch(error => {
@@ -54,6 +60,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);
