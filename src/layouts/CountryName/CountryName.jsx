@@ -14,7 +14,7 @@ const CountryName = () => {
             setCountries(data)
         })
     }, [])
-    
+    console.log(countries);
     return (
         <div className="my-16">
             <h1 className="text-3xl font-bold text-center">Explore Country</h1>

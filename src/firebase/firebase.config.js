@@ -4,14 +4,16 @@ import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC2cp7NaTLREAP6QwTdrcAqJDJ4EYnnTIo",
-  authDomain: "tourism-management-aed7f.firebaseapp.com",
-  projectId: "tourism-management-aed7f",
-  storageBucket: "tourism-management-aed7f.appspot.com",
-  messagingSenderId: "36675053077",
-  appId: "1:36675053077:web:d401a112327a25ab5f501c",
+  apiKey: import.meta.env.VITE_KEYAPI,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.APPID,
 };
 
 // Initialize Firebase
