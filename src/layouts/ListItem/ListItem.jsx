@@ -1,27 +1,35 @@
-import { remove } from "firebase/database";
+// import { remove } from "firebase/database";
 import PropTypes from "prop-types";
 
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const ListItem = ({ item,remove,setRemove }) => {
-  const {_id, photo, country_name, location, touristsSpotName, short_description } =
-    item;
-  
-    const handleDelete = (id) => {
-        console.log("delete", id);
-        fetch(`http://localhost:5000/mySpot/${id}`, {
-            method: "DELETE"
-            
-        })
-            .then(res => res.json())
-            .then(data => {
-              if (data.deletedCount>0) {
-              setRemove(!remove)
-            }
-        })
-    }
+const ListItem = ({ item, remove, setRemove }) => {
+  const {
+    _id,
+    photo,
+    country_name,
+    location,
+    touristsSpotName,
+    short_description,
+  } = item;
+
+  const handleDelete = (id) => {
+    console.log("delete", id);
+    fetch(
+      `https://terrific-travels-server-1kyxzyfu9-mehedihasan2061s-projects.vercel.app/mySpot/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          setRemove(!remove);
+        }
+      });
+  };
   return (
     <div>
       <div className="relative max-w-xs w-[90%] mx-auto my-10  rounded-md shadow-md dark:bg-gray-300 dark:text-gray-800">
@@ -72,7 +80,7 @@ const ListItem = ({ item,remove,setRemove }) => {
 ListItem.propTypes = {
   item: PropTypes.object,
   remove: PropTypes.bool,
-  setRemove:PropTypes.func
+  setRemove: PropTypes.func,
 };
 
 export default ListItem;

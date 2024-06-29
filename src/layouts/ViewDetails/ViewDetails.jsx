@@ -5,8 +5,6 @@ import { useLoaderData, useParams } from "react-router-dom";
 const ViewDetails = () => {
     const spotCard=useLoaderData()
     const { id } = useParams()
-    // console.log(spotCard[0]._id, id);
-    
     const singleCard = spotCard.find(item => item._id === id)
     
     const {

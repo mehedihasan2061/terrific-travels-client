@@ -28,7 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/allTourist",
         element: <AllTouristSpot></AllTouristSpot>,
-        loader: () => fetch("http://localhost:5000/spot"),
+        loader: () =>
+          fetch(
+            "https://terrific-travels-server-1kyxzyfu9-mehedihasan2061s-projects.vercel.app/spot"
+          ),
       },
       {
         path: "/detail/:id",
@@ -37,12 +40,18 @@ const router = createBrowserRouter([
             <ViewDetails></ViewDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/spot"),
+        loader: () =>
+          fetch(
+            "https://terrific-travels-server-1kyxzyfu9-mehedihasan2061s-projects.vercel.app/spot"
+          ),
       },
       {
         path: "/country",
         element: <CountryName></CountryName>,
-        loader: () => fetch("http://localhost:5000/country"),
+        loader: () =>
+          fetch(
+            "https://terrific-travels-server-1kyxzyfu9-mehedihasan2061s-projects.vercel.app/country"
+          ),
       },
       {
         path: "/addCountry",
@@ -56,12 +65,18 @@ const router = createBrowserRouter([
             <SpotCountry></SpotCountry>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/spot"),
+        loader: () =>
+          fetch(
+            "https://terrific-travels-server-1kyxzyfu9-mehedihasan2061s-projects.vercel.app/spot"
+          ),
       },
       {
         path: "/spotDetails/:id",
         element: <SpotDetails></SpotDetails>,
-        loader: () => fetch("http://localhost:5000/spot"),
+        loader: () =>
+          fetch(
+            "https://terrific-travels-server-1kyxzyfu9-mehedihasan2061s-projects.vercel.app/spot"
+          ),
       },
 
       {
@@ -84,7 +99,9 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateItem></UpdateItem>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/spot/${params.id}`),
+          fetch(
+            `https://terrific-travels-server-1kyxzyfu9-mehedihasan2061s-projects.vercel.app/spot/${params.id}`
+          ),
       },
       {
         path: "/login",
@@ -99,4 +116,3 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
-

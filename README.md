@@ -1,8 +1,21 @@
-# React + Vite
+# Terrific Travels
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Site URL
+[ Live Link](https://tourism-management-aed7f.web.app/)
 
-Currently, two official plugins are available:
+## Features
+- **Responsive Design**: Our website is fully responsive and looks great on all devices.
+- **Css frameWork**: tailwindCss,DaisyUI.
+- **Css frameWork**: tailwindCss,DaisyUI.
+## Package Link
+[React-Lottie](https://www.npmjs.com/package/react-lottie)
+[React-Simple-typeWriter](https://www.npmjs.com/package/react-simple-typewriter)
+- [Express.js](https://expressjs.com/en/starter/hello-world.html) 
+- [MongoDB](https://www.mongodb.com/products/platform/atlas-database) 
+- [Firebase](https://console.firebase.google.com/) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
+
