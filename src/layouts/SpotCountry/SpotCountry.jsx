@@ -8,7 +8,7 @@ const SpotCountry = () => {
     
     const { country_name } = useParams()
     const spot_country = country_name;
-    console.log(spot_country);
+    
     console.log(country_name);
     const spots = loadedCountry.filter(country => country.country_name === spot_country)
     console.log(spots);
