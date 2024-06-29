@@ -1,3 +1,4 @@
+import { remove } from "firebase/database";
 import PropTypes from "prop-types";
 
 import { FaLocationDot } from "react-icons/fa6";
@@ -70,8 +71,8 @@ const ListItem = ({ item,remove,setRemove }) => {
 
 ListItem.propTypes = {
   item: PropTypes.object,
-  control: PropTypes.object,
-  setControl:PropTypes.func
+  remove: PropTypes.object,
+  setRemove:PropTypes.func
 };
 
 export default ListItem;
