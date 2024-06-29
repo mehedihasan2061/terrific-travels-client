@@ -1,14 +1,15 @@
-import { FaLocationDot } from "react-icons/fa6";
-import { useLoaderData, useParams } from "react-router-dom";
+import { FaArrowLeft, FaLocationDot } from "react-icons/fa6";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
-const ViewDetails = () => {
-    const spotCard=useLoaderData()
-    const { id } = useParams()
-    // console.log(spotCard[0]._id, id);
+const SpotDetails = () => {
+    const spotCard = useLoaderData()
     
-    const singleCard = spotCard.find(item => item._id === id)
-    
+    const { id } = useParams();
+    console.log(spotCard, id);
+
+    const singleCard = spotCard.find((item) => item._id === id);
+
     const {
       photo,
       touristsSpotName,
@@ -20,9 +21,10 @@ const ViewDetails = () => {
       travel_time,
       totalVisitorsPerYear,
     } = singleCard;
+    
     return (
       <div>
-        <div className="my-16 p-6 md:w-[60%] mx-auto rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
+        <div className="relative my-16 p-6 md:w-[60%] mx-auto rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
           <img
             src={photo}
             alt=""
@@ -70,9 +72,19 @@ const ViewDetails = () => {
               </div>
             </div>
           </div>
+          <Link to="/">
+            <button>
+              <div className="absolute flex items-center  top-2 bg-orange-600 hover:bg-orange-400 p-2 text-white rounded-xl">
+                <span className="mr-2">
+                  <FaArrowLeft></FaArrowLeft>
+                </span>
+                <p>Back To Home</p>
+              </div>
+            </button>
+          </Link>
         </div>
       </div>
     );
 };
 
-export default ViewDetails;
+export default SpotDetails;

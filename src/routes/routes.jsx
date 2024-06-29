@@ -10,6 +10,10 @@ import MyList from "../Pages/MyList/MyList";
 import UpdateItem from "../layouts/UpdateItem/UpdateItem";
 import AllTouristSpot from "../Pages/AllTouristSpot/AllTouristSpot";
 import ViewDetails from "../layouts/ViewDetails/ViewDetails";
+import CountryName from "../layouts/CountryName/CountryName";
+import AddCountry from "../Pages/AddCountry/AddCountry";
+import SpotCountry from "../layouts/SpotCountry/SpotCountry";
+import SpotDetails from "../layouts/SpotDetails/SpotDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,9 +32,34 @@ const router = createBrowserRouter([
       },
       {
         path: "/detail/:id",
-        element: <ViewDetails></ViewDetails>,
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/spot"),
       },
+      {
+        path: "/country",
+        element: <CountryName></CountryName>,
+        loader: () => fetch("http://localhost:5000/country"),
+      },
+      {
+        path: "/addCountry",
+        element: <AddCountry></AddCountry>,
+      },
+
+      {
+        path: "/spots/:country_name",
+        element: <SpotCountry></SpotCountry>,
+        loader: () => fetch("http://localhost:5000/spot"),
+      },
+      {
+        path: "/spotDetails/:id",
+        element: <SpotDetails></SpotDetails>,
+        loader: () => fetch("http://localhost:5000/spot"),
+      },
+
       {
         path: "/addTouristSpot",
         element: (

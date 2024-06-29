@@ -24,8 +24,8 @@ const Banner = () => {
             <p className="md:text-3xl font-semibold my-4 text-blue-900 bg-gray-300 opacity-65 p-2 rounded-xl">
               A magnificent architectural structure in Riyadh, Saudi Arabia
             </p>
-            <p className="flex items-center space-x-2 text-2xl font-bold">
-              <FaLocationDot className="text-2xl text-red-600"></FaLocationDot>
+            <p className="flex items-center space-x-2 md:text-2xl font-bold">
+              <FaLocationDot className="md:text-2xl text-red-600"></FaLocationDot>
               <span className="text-green-600">
                 Sydney Opera House, Sydney NSW, Australia
               </span>
@@ -46,8 +46,8 @@ const Banner = () => {
             <p className="md:text-3xl font-semibold my-4 text-blue-900 bg-gray-300 opacity-65 p-2 rounded-xl">
               A magnificent architectural structure in Riyadh, Saudi Arabia
             </p>
-            <p className="flex items-center space-x-2 text-2xl font-bold">
-              <FaLocationDot className="text-2xl text-red-600"></FaLocationDot>
+            <p className="flex items-center space-x-2 md:text-2xl font-bold">
+              <FaLocationDot className="md:text-2xl text-red-600"></FaLocationDot>
               <span className="text-green-600">Riyadh Saudi Arabia</span>
             </p>
           </div>
@@ -67,8 +67,8 @@ const Banner = () => {
             <p className="md:text-3xl font-semibold my-4 text-blue-900 bg-gray-300 opacity-65 p-2 rounded-xl">
               A magnificent architectural structure in Riyadh, Saudi Arabia
             </p>
-            <p className="flex items-center space-x-2 text-2xl font-bold">
-              <FaLocationDot className="text-2xl text-red-600"></FaLocationDot>
+            <p className="flex items-center space-x-2 md:text-2xl font-bold">
+              <FaLocationDot className="md:text-2xl text-red-600"></FaLocationDot>
               <span className="text-green-600">
                 Orlando Eye, International Drive, Orlando, FL, USA
               </span>
@@ -89,8 +89,8 @@ const Banner = () => {
             <p className="md:text-3xl font-semibold my-4 text-blue-900 bg-gray-300  p-2 rounded-xl">
               A magnificent architectural structure in Riyadh, Saudi Arabia
             </p>
-            <p className="flex items-center space-x-2 text-2xl font-bold">
-              <FaLocationDot className="text-2xl text-red-600"></FaLocationDot>
+            <p className="flex items-center space-x-2 md:text-2xl font-bold">
+              <FaLocationDot className="md:text-2xl text-red-600"></FaLocationDot>
               <span className="text-green-600">
                 Temple of Heaven South Gate, Dongcheng, China
               </span>

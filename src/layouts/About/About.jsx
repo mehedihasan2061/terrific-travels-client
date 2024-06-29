@@ -9,7 +9,7 @@ const About = () => {
         <p className="text-xl font-semibold">
           Why should you love terrific travel?
         </p>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid md:grid-cols-2  gap-2">
           <div className="text-gray-600">
             <p className="my-3">
               <span className="text-xl font-bold">
@@ -55,7 +55,7 @@ const About = () => {
             </p>
           </div>
           <div >
-            <img className="w-96 h-96  rounded-full" src={img} alt="" />
+            <img className="md:w-96 md:h-96  md:rounded-full" src={img} alt="" />
             
           </div>
         </div>

@@ -17,10 +17,10 @@ const MyList = () => {
         })
     },[user,control])
 
-   
+   console.log(items);
     
     return (
-        <div className="container mx-auto  grid grid-cols-3 justify-center">
+        <div className="container mx-auto  grid md:grid-cols-3 justify-center">
             {
                 items.map(item => <ListItem key={item._id} item={item} control={control} setControl={setControl}></ListItem>)
             }
