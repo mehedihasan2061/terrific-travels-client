@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import About from "../../layouts/About/About";
 import CountryName from "../../layouts/CountryName/CountryName";
 import NewsLetter from "../../layouts/NewsLetter/NewsLetter";
+import ExploreTour from "../../layouts/ExploreTour/ExploreTour";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
             <Tourist key={user._id} user={user}></Tourist>
           ))}
         </div> */}
+        <ExploreTour></ExploreTour>
         <CountryName></CountryName>
         <About></About>
         <NewsLetter></NewsLetter>

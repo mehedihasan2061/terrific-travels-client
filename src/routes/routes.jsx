@@ -51,7 +51,11 @@ const router = createBrowserRouter([
 
       {
         path: "/spots/:country_name",
-        element: <SpotCountry></SpotCountry>,
+        element: (
+          <PrivateRoute>
+            <SpotCountry></SpotCountry>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/spot"),
       },
       {

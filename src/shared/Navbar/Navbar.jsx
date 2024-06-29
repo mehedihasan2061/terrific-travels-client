@@ -1,9 +1,14 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 
 const Navbar = () => {
+  const [text] = useTypewriter({
+    words: [" Terrific_Travels"],
+    loop: 0,
+  });
 
     const{user,logOut}=useContext(AuthContext)
     const links = (
@@ -37,7 +42,7 @@ const Navbar = () => {
         })
     };
     return (
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 container mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -58,12 +63,15 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 md:w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 text-2xl rounded-box z-[1] mt-3 md:w-52 p-2 shadow"
             >
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl md:text-3xl">Terrific Travels</a>
+          <a className="btn btn-ghost text-xl md:text-3xl ">
+            <span className="text-green-600">{text}</span>
+            <Cursor cursorColor="orange"></Cursor>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>

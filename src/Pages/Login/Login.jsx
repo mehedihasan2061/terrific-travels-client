@@ -3,6 +3,8 @@ import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa6";
+import login from "../../lottie/login/Animation - 1719690115143.json"
+import Lottie from "react-lottie";
 
 
 const Login = () => {
@@ -10,6 +12,14 @@ const Login = () => {
     const { signIn, googleLogin, gitHubLogin } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: login,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   
   const location = useLocation()
   console.log(location.pathname);
@@ -71,7 +81,10 @@ const Login = () => {
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
-            <h1 className="text-xl md:text-4xl font-bold my-6">Please Login now!</h1>
+            <h1 className="text-xl md:text-2xl font-bold my-6">
+              Please Login now!
+            </h1>
+            <Lottie options={defaultOptions} height={200} width={200} />
           </div>
           <div className="card bg-base-100 md:w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleLogin} className="card-body">

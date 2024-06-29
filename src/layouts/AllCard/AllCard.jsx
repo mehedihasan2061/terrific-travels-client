@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 
 const AllCard = ({ item }) => {
     const {
-        _id,
+      _id,
+      country_name,
       photo,
       touristsSpotName,
       average_cost,
@@ -41,6 +42,9 @@ const AllCard = ({ item }) => {
             alt=""
             className="object-cover w-full rounded-xl mb-4 h-60 sm:h-96 dark:bg-gray-500"
           />
+          <h2 className="mb-1 text-xl font-semibold text-green-600">
+            {country_name}
+          </h2>
           <h2 className="mb-1 text-xl font-bold text-orange-600">
             {seasonality}
           </h2>
