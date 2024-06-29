@@ -3,11 +3,8 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const SpotDetails = () => {
-    const spotCard = useLoaderData()
-    
+    const spotCard = useLoaderData()   
     const { id } = useParams();
-    console.log(spotCard, id);
-
     const singleCard = spotCard.find((item) => item._id === id);
 
     const {
