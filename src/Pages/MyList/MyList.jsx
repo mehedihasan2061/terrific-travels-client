@@ -6,8 +6,8 @@ import ListItem from "../../layouts/ListItem/ListItem";
 const MyList = () => {
     const { user } = useContext(AuthContext)
     const [items, setItems] = useState([])
-    const [control, setControl] = useState(false);
-    console.log(user.email);
+    const [remove, setRemove] = useState(false);
+   
 
     useEffect(() => {
         fetch(`http://localhost:5000/mySpot/${user?.email}`)
@@ -15,14 +15,14 @@ const MyList = () => {
             .then(data => {
             setItems(data);
         })
-    },[user,control])
+    },[user,remove])
 
-   console.log(items);
+   
     
     return (
         <div className="container mx-auto  grid md:grid-cols-3 justify-center">
             {
-                items.map(item => <ListItem key={item._id} item={item} control={control} setControl={setControl}></ListItem>)
+                items.map(item => <ListItem key={item._id} item={item} remove={remove} setRemove={setRemove}></ListItem>)
             }
         </div>
     );

@@ -4,12 +4,10 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const ListItem = ({ item,control,setControl }) => {
+const ListItem = ({ item,remove,setRemove }) => {
   const {_id, photo, country_name, location, touristsSpotName, short_description } =
     item;
   
-    
-    //   console.log(item);
     const handleDelete = (id) => {
         console.log("delete", id);
         fetch(`http://localhost:5000/mySpot/${id}`, {
@@ -19,7 +17,7 @@ const ListItem = ({ item,control,setControl }) => {
             .then(res => res.json())
             .then(data => {
               if (data.deletedCount>0) {
-              setControl(!control)
+              setRemove(!remove)
             }
         })
     }
