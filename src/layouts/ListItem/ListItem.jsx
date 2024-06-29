@@ -71,7 +71,7 @@ const ListItem = ({ item,remove,setRemove }) => {
 
 ListItem.propTypes = {
   item: PropTypes.object,
-  remove: PropTypes.object,
+  remove: PropTypes.bool,
   setRemove:PropTypes.func
 };
 
